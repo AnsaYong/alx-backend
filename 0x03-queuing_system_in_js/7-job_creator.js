@@ -60,10 +60,10 @@ jobs.forEach((jobData) => {
 
     // Listen to the queue error event
     job.on('complete', () => {
-        console.log(`Notification job ${job.id} completed`);
+        console.log(`Notification job #${job.id} completed`);
     }).on('failed', (err) => {
-        console.log(`Notification job ${job.id} failed: {err.message}`);
+        console.log(`Notification job #${job.id} failed: ${err.message}`);
     }).on('progress', (progress) => {
-        console.log(`Notification job ${job.id} ${progress}% complete`);
+        console.log(`Notification job #${job.id} ${progress}% complete`);
     });
 });
